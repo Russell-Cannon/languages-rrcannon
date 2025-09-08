@@ -1,0 +1,11 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+main { max-width: 680px; margin: 2rem auto; padding: 1rem; }
+.hidden { display: none; }
+.grid { display: grid; grid-template-columns: repeat(3, 120px); gap: 6px; margin: 1rem 0; }
+.cell { width: 120px; height: 120px; display: grid; place-items: center; font-size: 3rem; border: 2px solid #222; cursor: pointer; user-select: none; }
+.cell.disabled { cursor: not-allowed; color: #777; }
+.controls { display: flex; gap: .5rem; margin-bottom: .5rem; }
+#status { min-height: 1.5rem; }
+#leaders { padding-left: 1.25rem; }
+button { padding: .5rem .75rem; border: 1px solid #222; background: #f6f6f6; }
+input { padding: .5rem .6rem; }

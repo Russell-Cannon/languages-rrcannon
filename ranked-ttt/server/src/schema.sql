@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS players (
+id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+name TEXT UNIQUE NOT NULL,
+rating INT NOT NULL DEFAULT 1000,
+created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+
+CREATE TABLE IF NOT EXISTS games (
+id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+player_x UUID NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+player_o UUID NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+winner UUID NULL REFERENCES players(id),
+is_draw BOOLEAN NOT NULL DEFAULT FALSE,
+moves JSONB NOT NULL,
+rating_delta INT NOT NULL,
+created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+
+CREATE INDEX IF NOT EXISTS idx_players_rating ON players(rating DESC);
