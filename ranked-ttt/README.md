@@ -24,7 +24,7 @@ A full-stack, Dockerized web application that lets players compete in ranked Tic
 ## Quickstart
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Russell-Cannon/languages-rrcannon/tree/main/ranked-ttt
    cd ranked-ttt
    ```
 
